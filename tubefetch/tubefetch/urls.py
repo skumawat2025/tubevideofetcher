@@ -14,10 +14,22 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, re_path
+from django.urls import path, include
 from videofetcher import views
 
+
+from rest_framework import routers
+from videofetcher.views import VideoViewSet
+
+# Initialize a router object from the DefaultRouter class
+router = routers.DefaultRouter()
+
+# Register the VideoViewSet to the router with the endpoint 'videos'
+router.register(r'videos', VideoViewSet)
+
+# URL patterns list for the Django project
 urlpatterns = [
     path('admin/', admin.site.urls),
-    re_path('api/get-videos', views.getVideos),
+
+    path('api/', include(router.urls)),
 ]

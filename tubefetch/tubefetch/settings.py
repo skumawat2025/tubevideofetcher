@@ -29,6 +29,18 @@ DEBUG = True
 CORS_ORIGIN_ALLOW_ALL = True
 
 
+# CORS_ALLOW_METHODS = ['GET', 'OPTIONS']
+# CORS_ALLOW_HEADERS = ['Content-Type', 'Authorization']
+
+# REST_FRAMEWORK = {
+#     'DEFAULT_PERMISSION_CLASSES': [
+#         'corsheaders.middleware.CorsMiddleware',
+#         'rest_framework.permissions.AllowAny',
+#     ],
+# }
+
+
+
 ALLOWED_HOSTS = []
 
 
@@ -43,7 +55,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'videofetcher',
     'rest_framework',
-    'corsheaders',
+    'corsheaders'
 ]
 
 MIDDLEWARE = [
@@ -76,6 +88,11 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'tubefetch.wsgi.application'
+
+# #cronJob schedule
+# CRONJOBS = [
+#     ('*/1 * * * *', 'videofetcher.cron.my_scheduled_job')
+# ]
 
 
 # Database
@@ -124,6 +141,17 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'static/'
+
+#celery broker, result, setup with redis server
+CELERY_BROKER_URL = 'redis://127.0.0.1:6379'
+CELERY_RESULT_BACKEND = 'redis://127.0.0.1:6379'
+CELERY_ACCEPT_CONTENT = ['application/json']
+CELERY_RESULT_SERIALIZER = 'json'
+CELERY_TASK_SELERIZER = 'json'
+
+#add your youtube v3 data apis in this list
+DEVELOPER_API_KEY  = ["AIpaSyASGapaV7SLbbptAV5U6F_5XSKI1WS6xoM", "AIzaSyASGapaV7SLbbptAV5U6F_5XSKI1WS6xoM"] #adding some example apis to test
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
