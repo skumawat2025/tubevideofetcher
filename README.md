@@ -34,18 +34,8 @@ To install the Django backend of the TubeFetcher, follow these steps:
 1. Open a terminal in the `tubefetch` folder of the project.
 2. Run `pip install -r requirements.txt` to install all the required dependencies.
 3. Run `python manage.py makemigrations` to create the database migrations.
-4. Run `python manage.py` migrate to apply the migrations and create the database.
+4. Run `python manage.py migrate` to apply the migrations and create the database.
 5. Run `python manage.py runserver` to start the development server.
-
-## Installing the Frontend
-
-To install the React frontend of the TubeFetcher, follow these steps:
-1. Open a terminal in the `frontend` folder of the project.
-2. Run `npm install` to install all the required dependencies.
-3. Once the installation is complete, run `npm start` to start the development server.
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 
 ## Installing the Frontend
@@ -63,7 +53,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 Once the backend server is running properly and frontend is available in the localhost we need to To start the celery task and fetch the latest videos for a given query: 
 
- #### BONUS 
  You can change the query from [here](https://github.com/18ME10049/tubevideofetcher/blob/7ca61c406547c103799f673bd8024cbd04beee63/tubefetch/videofetcher/task.py#L55) by whatever you want. 
 
  1. Open a new terminal window in the tubefetch directory.
