@@ -6,6 +6,9 @@ Welcome to the TubeFetcher project! This project is a combination of a React fro
 
 Please follow the instructions below to run this project, which includes both the React frontend and Django backend, as well as the Celery background task for displaying the latest video updates. If you encounter any issues, please refer to the accompanying video demonstration for running the app.
 
+# [Video Link](https://screenrec.com/share/mY9tnafMLD)
+
+
 ## Requirements
 
 1. Node.js and npm (Node Package Manager)
