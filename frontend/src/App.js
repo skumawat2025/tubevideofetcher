@@ -22,7 +22,7 @@ function App() {
 
     const intervalId = setInterval(() => {
       fetchData();
-    }, 5000);
+    }, 60000);
 
     return () => clearInterval(intervalId);
   }, []);
